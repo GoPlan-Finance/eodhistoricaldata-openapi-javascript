@@ -1,0 +1,43 @@
+{
+  "name": "eodhistoricaldata-openapi",
+  "version": "0.0.1",
+  "description": "EOD Historical Data API Client",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "files": [
+    "dist/*.js",
+    "dist/*.d.ts",
+    "dist/*.map"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GoPlan-Finance/eodhistoricaldata-openapi-javascript.git"
+  },
+  "keywords": [
+    "eod",
+    "eodhistoricaldata",
+    "api",
+    "client",
+    "openapi"
+  ],
+  "author": "Samuel Denis-D'Ortun",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/GoPlan-Finance/eodhistoricaldata-openapi/issues"
+  },
+  "homepage": "https://github.com/GoPlan-Finance/eodhistoricaldata-openapi#readme",
+  "devDependencies": {
+    "openapi-typescript-codegen": "^0.9.2",
+    "typescript": "^4.2.3",
+    "webpack": "^5.28.0"
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.2.3",
+    "axios": "^0.21.1",
+    "node-fetch": "^2.6.1"
+  }
+}
