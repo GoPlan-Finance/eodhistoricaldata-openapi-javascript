@@ -25,13 +25,181 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SearchApi = exports.SearchApiFactory = exports.SearchApiFp = exports.SearchApiAxiosParamCreator = exports.ExchangesApi = exports.ExchangesApiFactory = exports.ExchangesApiFp = exports.ExchangesApiAxiosParamCreator = void 0;
+exports.ExchangesApi = exports.ExchangesApiFactory = exports.ExchangesApiFp = exports.ExchangesApiAxiosParamCreator = exports.AssetsApi = exports.AssetsApiFactory = exports.AssetsApiFp = exports.AssetsApiAxiosParamCreator = void 0;
 const axios_1 = __importDefault(require("axios"));
 // Some imports not used depending on template conditions
 // @ts-ignore
 const common_1 = require("./common");
 // @ts-ignore
 const base_1 = require("./base");
+/**
+ * AssetsApi - axios parameter creator
+ * @export
+ */
+const AssetsApiAxiosParamCreator = function (configuration) {
+    return {
+        /**
+         *
+         * @summary Get Asset fundamentals
+         * @param {string} ticker Asset Ticker
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assetFundamentalsGeneralSection: (ticker, options = {}) => __awaiter(this, void 0, void 0, function* () {
+            // verify required parameter 'ticker' is not null or undefined
+            common_1.assertParamExists('assetFundamentalsGeneralSection', 'ticker', ticker);
+            const localVarPath = `/fundamentals/{ticker}?fmt=json&filter=General`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = Object.assign(Object.assign({ method: 'GET' }, baseOptions), options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            // authentication api_token required
+            yield common_1.setApiKeyToObject(localVarQueryParameter, "api_token", configuration);
+            common_1.setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = Object.assign(Object.assign(Object.assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+            return {
+                url: common_1.toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        }),
+        /**
+         *
+         * @summary Search symbols
+         * @param {string} query Name of ticker or search string
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        searchAsset: (query, options = {}) => __awaiter(this, void 0, void 0, function* () {
+            // verify required parameter 'query' is not null or undefined
+            common_1.assertParamExists('searchAsset', 'query', query);
+            const localVarPath = `/search/{query}`
+                .replace(`{${"query"}}`, encodeURIComponent(String(query)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = Object.assign(Object.assign({ method: 'GET' }, baseOptions), options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            // authentication api_token required
+            yield common_1.setApiKeyToObject(localVarQueryParameter, "api_token", configuration);
+            common_1.setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = Object.assign(Object.assign(Object.assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+            return {
+                url: common_1.toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        }),
+    };
+};
+exports.AssetsApiAxiosParamCreator = AssetsApiAxiosParamCreator;
+/**
+ * AssetsApi - functional programming interface
+ * @export
+ */
+const AssetsApiFp = function (configuration) {
+    const localVarAxiosParamCreator = exports.AssetsApiAxiosParamCreator(configuration);
+    return {
+        /**
+         *
+         * @summary Get Asset fundamentals
+         * @param {string} ticker Asset Ticker
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assetFundamentalsGeneralSection(ticker, options) {
+            return __awaiter(this, void 0, void 0, function* () {
+                const localVarAxiosArgs = yield localVarAxiosParamCreator.assetFundamentalsGeneralSection(ticker, options);
+                return common_1.createRequestFunction(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration);
+            });
+        },
+        /**
+         *
+         * @summary Search symbols
+         * @param {string} query Name of ticker or search string
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        searchAsset(query, options) {
+            return __awaiter(this, void 0, void 0, function* () {
+                const localVarAxiosArgs = yield localVarAxiosParamCreator.searchAsset(query, options);
+                return common_1.createRequestFunction(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration);
+            });
+        },
+    };
+};
+exports.AssetsApiFp = AssetsApiFp;
+/**
+ * AssetsApi - factory interface
+ * @export
+ */
+const AssetsApiFactory = function (configuration, basePath, axios) {
+    const localVarFp = exports.AssetsApiFp(configuration);
+    return {
+        /**
+         *
+         * @summary Get Asset fundamentals
+         * @param {string} ticker Asset Ticker
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assetFundamentalsGeneralSection(ticker, options) {
+            return localVarFp.assetFundamentalsGeneralSection(ticker, options).then((request) => request(axios, basePath));
+        },
+        /**
+         *
+         * @summary Search symbols
+         * @param {string} query Name of ticker or search string
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        searchAsset(query, options) {
+            return localVarFp.searchAsset(query, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+exports.AssetsApiFactory = AssetsApiFactory;
+/**
+ * AssetsApi - object-oriented interface
+ * @export
+ * @class AssetsApi
+ * @extends {BaseAPI}
+ */
+class AssetsApi extends base_1.BaseAPI {
+    /**
+     *
+     * @summary Get Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    assetFundamentalsGeneralSection(ticker, options) {
+        return exports.AssetsApiFp(this.configuration).assetFundamentalsGeneralSection(ticker, options).then((request) => request(this.axios, this.basePath));
+    }
+    /**
+     *
+     * @summary Search symbols
+     * @param {string} query Name of ticker or search string
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    searchAsset(query, options) {
+        return exports.AssetsApiFp(this.configuration).searchAsset(query, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+exports.AssetsApi = AssetsApi;
 /**
  * ExchangesApi - axios parameter creator
  * @export
@@ -44,7 +212,7 @@ const ExchangesApiAxiosParamCreator = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listEchanges: (options = {}) => __awaiter(this, void 0, void 0, function* () {
+        listExchanges: (options = {}) => __awaiter(this, void 0, void 0, function* () {
             const localVarPath = `/exchanges-list`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
@@ -112,9 +280,9 @@ const ExchangesApiFp = function (configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listEchanges(options) {
+        listExchanges(options) {
             return __awaiter(this, void 0, void 0, function* () {
-                const localVarAxiosArgs = yield localVarAxiosParamCreator.listEchanges(options);
+                const localVarAxiosArgs = yield localVarAxiosParamCreator.listExchanges(options);
                 return common_1.createRequestFunction(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration);
             });
         },
@@ -147,8 +315,8 @@ const ExchangesApiFactory = function (configuration, basePath, axios) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        listEchanges(options) {
-            return localVarFp.listEchanges(options).then((request) => request(axios, basePath));
+        listExchanges(options) {
+            return localVarFp.listExchanges(options).then((request) => request(axios, basePath));
         },
         /**
          *
@@ -177,8 +345,8 @@ class ExchangesApi extends base_1.BaseAPI {
      * @throws {RequiredError}
      * @memberof ExchangesApi
      */
-    listEchanges(options) {
-        return exports.ExchangesApiFp(this.configuration).listEchanges(options).then((request) => request(this.axios, this.basePath));
+    listExchanges(options) {
+        return exports.ExchangesApiFp(this.configuration).listExchanges(options).then((request) => request(this.axios, this.basePath));
     }
     /**
      *
@@ -193,107 +361,4 @@ class ExchangesApi extends base_1.BaseAPI {
     }
 }
 exports.ExchangesApi = ExchangesApi;
-/**
- * SearchApi - axios parameter creator
- * @export
- */
-const SearchApiAxiosParamCreator = function (configuration) {
-    return {
-        /**
-         *
-         * @summary Search symbols
-         * @param {string} query Name of ticker or search string
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        search: (query, options = {}) => __awaiter(this, void 0, void 0, function* () {
-            // verify required parameter 'query' is not null or undefined
-            common_1.assertParamExists('search', 'query', query);
-            const localVarPath = `/search/{query}`
-                .replace(`{${"query"}}`, encodeURIComponent(String(query)));
-            // use dummy base URL string because the URL constructor only accepts absolute URLs.
-            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
-            let baseOptions;
-            if (configuration) {
-                baseOptions = configuration.baseOptions;
-            }
-            const localVarRequestOptions = Object.assign(Object.assign({ method: 'GET' }, baseOptions), options);
-            const localVarHeaderParameter = {};
-            const localVarQueryParameter = {};
-            // authentication api_token required
-            yield common_1.setApiKeyToObject(localVarQueryParameter, "api_token", configuration);
-            common_1.setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
-            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = Object.assign(Object.assign(Object.assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
-            return {
-                url: common_1.toPathString(localVarUrlObj),
-                options: localVarRequestOptions,
-            };
-        }),
-    };
-};
-exports.SearchApiAxiosParamCreator = SearchApiAxiosParamCreator;
-/**
- * SearchApi - functional programming interface
- * @export
- */
-const SearchApiFp = function (configuration) {
-    const localVarAxiosParamCreator = exports.SearchApiAxiosParamCreator(configuration);
-    return {
-        /**
-         *
-         * @summary Search symbols
-         * @param {string} query Name of ticker or search string
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        search(query, options) {
-            return __awaiter(this, void 0, void 0, function* () {
-                const localVarAxiosArgs = yield localVarAxiosParamCreator.search(query, options);
-                return common_1.createRequestFunction(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration);
-            });
-        },
-    };
-};
-exports.SearchApiFp = SearchApiFp;
-/**
- * SearchApi - factory interface
- * @export
- */
-const SearchApiFactory = function (configuration, basePath, axios) {
-    const localVarFp = exports.SearchApiFp(configuration);
-    return {
-        /**
-         *
-         * @summary Search symbols
-         * @param {string} query Name of ticker or search string
-         * @param {*} [options] Override http request option.
-         * @throws {RequiredError}
-         */
-        search(query, options) {
-            return localVarFp.search(query, options).then((request) => request(axios, basePath));
-        },
-    };
-};
-exports.SearchApiFactory = SearchApiFactory;
-/**
- * SearchApi - object-oriented interface
- * @export
- * @class SearchApi
- * @extends {BaseAPI}
- */
-class SearchApi extends base_1.BaseAPI {
-    /**
-     *
-     * @summary Search symbols
-     * @param {string} query Name of ticker or search string
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SearchApi
-     */
-    search(query, options) {
-        return exports.SearchApiFp(this.configuration).search(query, options).then((request) => request(this.axios, this.basePath));
-    }
-}
-exports.SearchApi = SearchApi;
 //# sourceMappingURL=api.js.map

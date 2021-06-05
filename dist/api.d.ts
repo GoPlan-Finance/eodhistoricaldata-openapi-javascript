@@ -15,6 +15,254 @@ import { RequestArgs, BaseAPI } from './base';
 /**
  *
  * @export
+ * @interface AssetFundamentalsSectionGeneral
+ */
+export interface AssetFundamentalsSectionGeneral {
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    Code: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    Type: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    Name: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    Exchange: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    CurrencyCode?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    CurrencyName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    CurrencySymbol?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    CountryName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    CountryISO?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    ISIN?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    CUSIP?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    CIK?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    EmployerIdNumber?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    FiscalYearEnd?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    IPODate?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    InternationalDomestic?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    Sector?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    Industry?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    GicSector?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    GicGroup?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    GicIndustry?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    GicSubIndustry?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    HomeCategory?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    IsDelisted?: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    Description?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    Address?: string;
+    /**
+     *
+     * @type {AssetFundamentalsSectionGeneralAddressData}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    AddressData?: AssetFundamentalsSectionGeneralAddressData;
+    /**
+     *
+     * @type {Array<object>}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    Listings?: Array<object>;
+    /**
+     *
+     * @type {Array<object>}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    Officers?: Array<object>;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    Phone?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    WebURL?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    LogoURL?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    FullTimeEmployees?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneral
+     */
+    UpdatedAt?: string;
+}
+/**
+ *
+ * @export
+ * @interface AssetFundamentalsSectionGeneralAddressData
+ */
+export interface AssetFundamentalsSectionGeneralAddressData {
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneralAddressData
+     */
+    Street?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneralAddressData
+     */
+    City?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneralAddressData
+     */
+    State?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneralAddressData
+     */
+    Country?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AssetFundamentalsSectionGeneralAddressData
+     */
+    ZIP?: string;
+}
+/**
+ *
+ * @export
  * @interface Exchange
  */
 export interface Exchange {
@@ -160,6 +408,98 @@ export interface SymbolSearch {
     previousCloseDate?: string;
 }
 /**
+ * AssetsApi - axios parameter creator
+ * @export
+ */
+export declare const AssetsApiAxiosParamCreator: (configuration?: Configuration) => {
+    /**
+     *
+     * @summary Get Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    assetFundamentalsGeneralSection: (ticker: string, options?: any) => Promise<RequestArgs>;
+    /**
+     *
+     * @summary Search symbols
+     * @param {string} query Name of ticker or search string
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    searchAsset: (query: string, options?: any) => Promise<RequestArgs>;
+};
+/**
+ * AssetsApi - functional programming interface
+ * @export
+ */
+export declare const AssetsApiFp: (configuration?: Configuration) => {
+    /**
+     *
+     * @summary Get Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    assetFundamentalsGeneralSection(ticker: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AssetFundamentalsSectionGeneral>>;
+    /**
+     *
+     * @summary Search symbols
+     * @param {string} query Name of ticker or search string
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    searchAsset(query: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SymbolSearch>>>;
+};
+/**
+ * AssetsApi - factory interface
+ * @export
+ */
+export declare const AssetsApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
+    /**
+     *
+     * @summary Get Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    assetFundamentalsGeneralSection(ticker: string, options?: any): AxiosPromise<AssetFundamentalsSectionGeneral>;
+    /**
+     *
+     * @summary Search symbols
+     * @param {string} query Name of ticker or search string
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    searchAsset(query: string, options?: any): AxiosPromise<Array<SymbolSearch>>;
+};
+/**
+ * AssetsApi - object-oriented interface
+ * @export
+ * @class AssetsApi
+ * @extends {BaseAPI}
+ */
+export declare class AssetsApi extends BaseAPI {
+    /**
+     *
+     * @summary Get Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    assetFundamentalsGeneralSection(ticker: string, options?: any): Promise<import("axios").AxiosResponse<AssetFundamentalsSectionGeneral>>;
+    /**
+     *
+     * @summary Search symbols
+     * @param {string} query Name of ticker or search string
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    searchAsset(query: string, options?: any): Promise<import("axios").AxiosResponse<SymbolSearch[]>>;
+}
+/**
  * ExchangesApi - axios parameter creator
  * @export
  */
@@ -170,7 +510,7 @@ export declare const ExchangesApiAxiosParamCreator: (configuration?: Configurati
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listEchanges: (options?: any) => Promise<RequestArgs>;
+    listExchanges: (options?: any) => Promise<RequestArgs>;
     /**
      *
      * @summary Search symbols
@@ -191,7 +531,7 @@ export declare const ExchangesApiFp: (configuration?: Configuration) => {
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listEchanges(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Exchange>>>;
+    listExchanges(options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<Exchange>>>;
     /**
      *
      * @summary Search symbols
@@ -212,7 +552,7 @@ export declare const ExchangesApiFactory: (configuration?: Configuration, basePa
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listEchanges(options?: any): AxiosPromise<Array<Exchange>>;
+    listExchanges(options?: any): AxiosPromise<Array<Exchange>>;
     /**
      *
      * @summary Search symbols
@@ -236,7 +576,7 @@ export declare class ExchangesApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ExchangesApi
      */
-    listEchanges(options?: any): Promise<import("axios").AxiosResponse<Exchange[]>>;
+    listExchanges(options?: any): Promise<import("axios").AxiosResponse<Exchange[]>>;
     /**
      *
      * @summary Search symbols
@@ -246,63 +586,4 @@ export declare class ExchangesApi extends BaseAPI {
      * @memberof ExchangesApi
      */
     listSymbols(exchangeCode: string, options?: any): Promise<import("axios").AxiosResponse<Symbol[]>>;
-}
-/**
- * SearchApi - axios parameter creator
- * @export
- */
-export declare const SearchApiAxiosParamCreator: (configuration?: Configuration) => {
-    /**
-     *
-     * @summary Search symbols
-     * @param {string} query Name of ticker or search string
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    search: (query: string, options?: any) => Promise<RequestArgs>;
-};
-/**
- * SearchApi - functional programming interface
- * @export
- */
-export declare const SearchApiFp: (configuration?: Configuration) => {
-    /**
-     *
-     * @summary Search symbols
-     * @param {string} query Name of ticker or search string
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    search(query: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SymbolSearch>>>;
-};
-/**
- * SearchApi - factory interface
- * @export
- */
-export declare const SearchApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
-    /**
-     *
-     * @summary Search symbols
-     * @param {string} query Name of ticker or search string
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     */
-    search(query: string, options?: any): AxiosPromise<Array<SymbolSearch>>;
-};
-/**
- * SearchApi - object-oriented interface
- * @export
- * @class SearchApi
- * @extends {BaseAPI}
- */
-export declare class SearchApi extends BaseAPI {
-    /**
-     *
-     * @summary Search symbols
-     * @param {string} query Name of ticker or search string
-     * @param {*} [options] Override http request option.
-     * @throws {RequiredError}
-     * @memberof SearchApi
-     */
-    search(query: string, options?: any): Promise<import("axios").AxiosResponse<SymbolSearch[]>>;
 }
