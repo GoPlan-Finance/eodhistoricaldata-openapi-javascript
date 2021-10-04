@@ -71,6 +71,41 @@ const AssetsApiAxiosParamCreator = function (configuration) {
         }),
         /**
          *
+         * @summary Get Asset fundamentals
+         * @param {string} ticker Asset Ticker
+         * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        realTimeQuote: (ticker, s, options = {}) => __awaiter(this, void 0, void 0, function* () {
+            // verify required parameter 'ticker' is not null or undefined
+            common_1.assertParamExists('realTimeQuote', 'ticker', ticker);
+            const localVarPath = `/real-time/{ticker}?fmt=json`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = Object.assign(Object.assign({ method: 'GET' }, baseOptions), options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            // authentication api_token required
+            yield common_1.setApiKeyToObject(localVarQueryParameter, "api_token", configuration);
+            if (s !== undefined) {
+                localVarQueryParameter['s'] = s;
+            }
+            common_1.setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = Object.assign(Object.assign(Object.assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+            return {
+                url: common_1.toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        }),
+        /**
+         *
          * @summary Search symbols
          * @param {string} query Name of ticker or search string
          * @param {*} [options] Override http request option.
@@ -125,6 +160,20 @@ const AssetsApiFp = function (configuration) {
         },
         /**
          *
+         * @summary Get Asset fundamentals
+         * @param {string} ticker Asset Ticker
+         * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        realTimeQuote(ticker, s, options) {
+            return __awaiter(this, void 0, void 0, function* () {
+                const localVarAxiosArgs = yield localVarAxiosParamCreator.realTimeQuote(ticker, s, options);
+                return common_1.createRequestFunction(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration);
+            });
+        },
+        /**
+         *
          * @summary Search symbols
          * @param {string} query Name of ticker or search string
          * @param {*} [options] Override http request option.
@@ -158,6 +207,17 @@ const AssetsApiFactory = function (configuration, basePath, axios) {
         },
         /**
          *
+         * @summary Get Asset fundamentals
+         * @param {string} ticker Asset Ticker
+         * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        realTimeQuote(ticker, s, options) {
+            return localVarFp.realTimeQuote(ticker, s, options).then((request) => request(axios, basePath));
+        },
+        /**
+         *
          * @summary Search symbols
          * @param {string} query Name of ticker or search string
          * @param {*} [options] Override http request option.
@@ -186,6 +246,18 @@ class AssetsApi extends base_1.BaseAPI {
      */
     assetFundamentalsGeneralSection(ticker, options) {
         return exports.AssetsApiFp(this.configuration).assetFundamentalsGeneralSection(ticker, options).then((request) => request(this.axios, this.basePath));
+    }
+    /**
+     *
+     * @summary Get Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    realTimeQuote(ticker, s, options) {
+        return exports.AssetsApiFp(this.configuration).realTimeQuote(ticker, s, options).then((request) => request(this.axios, this.basePath));
     }
     /**
      *

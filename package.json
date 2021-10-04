@@ -24,7 +24,7 @@
     "client",
     "openapi"
   ],
-  "author": "Samuel Denis-D'Ortun",
+  "author": "GoPlan Finance Team <sam@sddproductions.com> (http://goplan.finance)",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/GoPlan-Finance/eodhistoricaldata-openapi/issues"

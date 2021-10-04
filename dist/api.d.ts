@@ -263,6 +263,79 @@ export interface AssetFundamentalsSectionGeneralAddressData {
 /**
  *
  * @export
+ * @interface AssetQuote
+ */
+export interface AssetQuote {
+    /**
+     *
+     * @type {string}
+     * @memberof AssetQuote
+     */
+    code: string;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetQuote
+     */
+    timestamp: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetQuote
+     */
+    gmtoffset: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetQuote
+     */
+    open: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetQuote
+     */
+    high: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetQuote
+     */
+    low: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetQuote
+     */
+    close: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetQuote
+     */
+    volume: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetQuote
+     */
+    previousClose: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetQuote
+     */
+    change: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetQuote
+     */
+    change_p: number;
+}
+/**
+ *
+ * @export
  * @interface Exchange
  */
 export interface Exchange {
@@ -422,6 +495,15 @@ export declare const AssetsApiAxiosParamCreator: (configuration?: Configuration)
     assetFundamentalsGeneralSection: (ticker: string, options?: any) => Promise<RequestArgs>;
     /**
      *
+     * @summary Get Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    realTimeQuote: (ticker: string, s?: string, options?: any) => Promise<RequestArgs>;
+    /**
+     *
      * @summary Search symbols
      * @param {string} query Name of ticker or search string
      * @param {*} [options] Override http request option.
@@ -444,6 +526,15 @@ export declare const AssetsApiFp: (configuration?: Configuration) => {
     assetFundamentalsGeneralSection(ticker: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AssetFundamentalsSectionGeneral>>;
     /**
      *
+     * @summary Get Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    realTimeQuote(ticker: string, s?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<AssetQuote>>>;
+    /**
+     *
      * @summary Search symbols
      * @param {string} query Name of ticker or search string
      * @param {*} [options] Override http request option.
@@ -464,6 +555,15 @@ export declare const AssetsApiFactory: (configuration?: Configuration, basePath?
      * @throws {RequiredError}
      */
     assetFundamentalsGeneralSection(ticker: string, options?: any): AxiosPromise<AssetFundamentalsSectionGeneral>;
+    /**
+     *
+     * @summary Get Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    realTimeQuote(ticker: string, s?: string, options?: any): AxiosPromise<Array<AssetQuote>>;
     /**
      *
      * @summary Search symbols
@@ -489,6 +589,16 @@ export declare class AssetsApi extends BaseAPI {
      * @memberof AssetsApi
      */
     assetFundamentalsGeneralSection(ticker: string, options?: any): Promise<import("axios").AxiosResponse<AssetFundamentalsSectionGeneral>>;
+    /**
+     *
+     * @summary Get Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    realTimeQuote(ticker: string, s?: string, options?: any): Promise<import("axios").AxiosResponse<AssetQuote[]>>;
     /**
      *
      * @summary Search symbols
