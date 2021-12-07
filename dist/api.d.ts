@@ -15,250 +15,364 @@ import { RequestArgs, BaseAPI } from './base';
 /**
  *
  * @export
- * @interface AssetFundamentalsSectionGeneral
+ * @interface ActivitiesInvolvement
  */
-export interface AssetFundamentalsSectionGeneral {
+export interface ActivitiesInvolvement {
     /**
      *
      * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
+     * @memberof ActivitiesInvolvement
      */
-    Code: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    Type: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    Name: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    Exchange: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    CurrencyCode?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    CurrencyName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    CurrencySymbol?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    CountryName?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    CountryISO?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    ISIN?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    CUSIP?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    CIK?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    EmployerIdNumber?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    FiscalYearEnd?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    IPODate?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    InternationalDomestic?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    Sector?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    Industry?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    GicSector?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    GicGroup?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    GicIndustry?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    GicSubIndustry?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    HomeCategory?: string;
+    Activity?: string;
     /**
      *
      * @type {boolean}
-     * @memberof AssetFundamentalsSectionGeneral
+     * @memberof ActivitiesInvolvement
      */
-    IsDelisted?: boolean;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    Description?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    Address?: string;
-    /**
-     *
-     * @type {AssetFundamentalsSectionGeneralAddressData}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    AddressData?: AssetFundamentalsSectionGeneralAddressData;
-    /**
-     *
-     * @type {Array<object>}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    Listings?: Array<object>;
-    /**
-     *
-     * @type {Array<object>}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    Officers?: Array<object>;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    Phone?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    WebURL?: string;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    LogoURL?: string;
-    /**
-     *
-     * @type {number}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    FullTimeEmployees?: number;
-    /**
-     *
-     * @type {string}
-     * @memberof AssetFundamentalsSectionGeneral
-     */
-    UpdatedAt?: string;
+    Involvement?: boolean;
 }
 /**
  *
  * @export
- * @interface AssetFundamentalsSectionGeneralAddressData
+ * @interface AddressData
  */
-export interface AssetFundamentalsSectionGeneralAddressData {
+export interface AddressData {
     /**
      *
      * @type {string}
-     * @memberof AssetFundamentalsSectionGeneralAddressData
+     * @memberof AddressData
      */
     Street?: string;
     /**
      *
      * @type {string}
-     * @memberof AssetFundamentalsSectionGeneralAddressData
+     * @memberof AddressData
      */
     City?: string;
     /**
      *
      * @type {string}
-     * @memberof AssetFundamentalsSectionGeneralAddressData
+     * @memberof AddressData
      */
     State?: string;
     /**
      *
      * @type {string}
-     * @memberof AssetFundamentalsSectionGeneralAddressData
+     * @memberof AddressData
      */
     Country?: string;
     /**
      *
      * @type {string}
-     * @memberof AssetFundamentalsSectionGeneralAddressData
+     * @memberof AddressData
      */
     ZIP?: string;
+}
+/**
+ *
+ * @export
+ * @interface AnalystRatings
+ */
+export interface AnalystRatings {
+    /**
+     *
+     * @type {number}
+     * @memberof AnalystRatings
+     */
+    Rating?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AnalystRatings
+     */
+    TargetPrice?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AnalystRatings
+     */
+    StrongBuy?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AnalystRatings
+     */
+    Buy?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AnalystRatings
+     */
+    Hold?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AnalystRatings
+     */
+    Sell?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AnalystRatings
+     */
+    StrongSell?: number;
+}
+/**
+ *
+ * @export
+ * @interface Annual
+ */
+export interface Annual {
+    /**
+     *
+     * @type {string}
+     * @memberof Annual
+     */
+    date?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof Annual
+     */
+    epsActual?: number;
+}
+/**
+ *
+ * @export
+ * @interface AnnualValue
+ */
+export interface AnnualValue {
+    /**
+     *
+     * @type {string}
+     * @memberof AnnualValue
+     */
+    date?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AnnualValue
+     */
+    dateFormatted?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AnnualValue
+     */
+    sharesMln?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof AnnualValue
+     */
+    shares?: number;
+}
+/**
+ *
+ * @export
+ * @interface AssetFundamentals
+ */
+export interface AssetFundamentals {
+    /**
+     *
+     * @type {General}
+     * @memberof AssetFundamentals
+     */
+    General?: General;
+    /**
+     *
+     * @type {Highlights}
+     * @memberof AssetFundamentals
+     */
+    Highlights?: Highlights;
+    /**
+     *
+     * @type {Valuation}
+     * @memberof AssetFundamentals
+     */
+    Valuation?: Valuation;
+    /**
+     *
+     * @type {SharesStats}
+     * @memberof AssetFundamentals
+     */
+    SharesStats?: SharesStats;
+    /**
+     *
+     * @type {Technicals}
+     * @memberof AssetFundamentals
+     */
+    Technicals?: Technicals;
+    /**
+     *
+     * @type {SplitsDividends}
+     * @memberof AssetFundamentals
+     */
+    SplitsDividends?: SplitsDividends;
+    /**
+     *
+     * @type {AnalystRatings}
+     * @memberof AssetFundamentals
+     */
+    AnalystRatings?: AnalystRatings;
+    /**
+     *
+     * @type {Holders}
+     * @memberof AssetFundamentals
+     */
+    Holders?: Holders;
+    /**
+     *
+     * @type {InsiderTransaction}
+     * @memberof AssetFundamentals
+     */
+    InsiderTransactions?: InsiderTransaction;
+    /**
+     *
+     * @type {ESGScores}
+     * @memberof AssetFundamentals
+     */
+    ESGScores?: ESGScores;
+    /**
+     *
+     * @type {OutstandingShares}
+     * @memberof AssetFundamentals
+     */
+    outstandingShares?: OutstandingShares;
+    /**
+     *
+     * @type {Earnings}
+     * @memberof AssetFundamentals
+     */
+    Earnings?: Earnings;
+    /**
+     *
+     * @type {Financials}
+     * @memberof AssetFundamentals
+     */
+    Financials?: Financials;
+}
+/**
+ *
+ * @export
+ * @interface AssetFundamentalsCompact
+ */
+export interface AssetFundamentalsCompact {
+    /**
+     *
+     * @type {General}
+     * @memberof AssetFundamentalsCompact
+     */
+    General?: General;
+    /**
+     *
+     * @type {Highlights}
+     * @memberof AssetFundamentalsCompact
+     */
+    Highlights?: Highlights;
+    /**
+     *
+     * @type {Valuation}
+     * @memberof AssetFundamentalsCompact
+     */
+    Valuation?: Valuation;
+    /**
+     *
+     * @type {SharesStats}
+     * @memberof AssetFundamentalsCompact
+     */
+    SharesStats?: SharesStats;
+    /**
+     *
+     * @type {Technicals}
+     * @memberof AssetFundamentalsCompact
+     */
+    Technicals?: Technicals;
+    /**
+     *
+     * @type {AnalystRatings}
+     * @memberof AssetFundamentalsCompact
+     */
+    AnalystRatings?: AnalystRatings;
+    /**
+     *
+     * @type {ESGScores}
+     * @memberof AssetFundamentalsCompact
+     */
+    ESGScores?: ESGScores;
+}
+/**
+ *
+ * @export
+ * @interface AssetPrice
+ */
+export interface AssetPrice {
+    /**
+     *
+     * @type {string}
+     * @memberof AssetPrice
+     */
+    Code: string;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetPrice
+     */
+    Timestamp?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetPrice
+     */
+    Gmtoffset?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetPrice
+     */
+    Open?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetPrice
+     */
+    High?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetPrice
+     */
+    Low?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetPrice
+     */
+    Close?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetPrice
+     */
+    Volume?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetPrice
+     */
+    PreviousClose?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetPrice
+     */
+    Change?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof AssetPrice
+     */
+    ChangeP?: number;
 }
 /**
  *
@@ -336,6 +450,412 @@ export interface AssetQuote {
 /**
  *
  * @export
+ * @interface BalanceSheet
+ */
+export interface BalanceSheet {
+    /**
+     *
+     * @type {string}
+     * @memberof BalanceSheet
+     */
+    currency_symbol?: string;
+    /**
+     *
+     * @type {{ [key: string]: BalanceSheetItem; }}
+     * @memberof BalanceSheet
+     */
+    quarterly?: {
+        [key: string]: BalanceSheetItem;
+    };
+    /**
+     *
+     * @type {{ [key: string]: BalanceSheetItem; }}
+     * @memberof BalanceSheet
+     */
+    yearly?: {
+        [key: string]: BalanceSheetItem;
+    };
+}
+/**
+ *
+ * @export
+ * @interface BalanceSheetItem
+ */
+export interface BalanceSheetItem {
+    /**
+     *
+     * @type {string}
+     * @memberof BalanceSheetItem
+     */
+    date?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BalanceSheetItem
+     */
+    filing_date?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BalanceSheetItem
+     */
+    currency_symbol?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    investments?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    changeToLiabilities?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    totalCashflowsFromInvestingActivities?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    netBorrowings?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    totalCashFromFinancingActivities?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    changeToOperatingActivities?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    netIncome?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    changeInCash?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    beginPeriodCashFlow?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    endPeriodCashFlow?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    totalCashFromOperatingActivities?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    depreciation?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    otherCashflowsFromInvestingActivities?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    dividendsPaid?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    changeToInventory?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    changeToAccountReceivables?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    salePurchaseOfStock?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    otherCashflowsFromFinancingActivities?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    changeToNetincome?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    capitalExpenditures?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    changeReceivables?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    cashFlowsOtherOperating?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    exchangeRateChanges?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    cashAndCashEquivalentsChanges?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    changeInWorkingCapital?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    otherNonCashItems?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof BalanceSheetItem
+     */
+    freeCashFlow?: number;
+}
+/**
+ *
+ * @export
+ * @interface CashFlow
+ */
+export interface CashFlow {
+    /**
+     *
+     * @type {string}
+     * @memberof CashFlow
+     */
+    currency_symbol?: string;
+    /**
+     *
+     * @type {{ [key: string]: BalanceSheetItem; }}
+     * @memberof CashFlow
+     */
+    quarterly?: {
+        [key: string]: BalanceSheetItem;
+    };
+    /**
+     *
+     * @type {{ [key: string]: BalanceSheetItem; }}
+     * @memberof CashFlow
+     */
+    yearly?: {
+        [key: string]: BalanceSheetItem;
+    };
+}
+/**
+ *
+ * @export
+ * @interface ESGScores
+ */
+export interface ESGScores {
+    /**
+     *
+     * @type {string}
+     * @memberof ESGScores
+     */
+    Disclaimer?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ESGScores
+     */
+    RatingDate?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof ESGScores
+     */
+    TotalEsg?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof ESGScores
+     */
+    TotalEsgPercentile?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof ESGScores
+     */
+    EnvironmentScore?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof ESGScores
+     */
+    EnvironmentScorePercentile?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof ESGScores
+     */
+    SocialScore?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof ESGScores
+     */
+    SocialScorePercentile?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof ESGScores
+     */
+    GovernanceScore?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof ESGScores
+     */
+    GovernanceScorePercentile?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof ESGScores
+     */
+    ControversyLevel?: number;
+    /**
+     *
+     * @type {{ [key: string]: ActivitiesInvolvement; }}
+     * @memberof ESGScores
+     */
+    ActivitiesInvolvement?: {
+        [key: string]: ActivitiesInvolvement;
+    };
+}
+/**
+ *
+ * @export
+ * @interface Earnings
+ */
+export interface Earnings {
+    /**
+     *
+     * @type {{ [key: string]: History; }}
+     * @memberof Earnings
+     */
+    History?: {
+        [key: string]: History;
+    };
+    /**
+     *
+     * @type {{ [key: string]: Trend; }}
+     * @memberof Earnings
+     */
+    Trend?: {
+        [key: string]: Trend;
+    };
+    /**
+     *
+     * @type {{ [key: string]: Annual; }}
+     * @memberof Earnings
+     */
+    Annual?: {
+        [key: string]: Annual;
+    };
+}
+/**
+ *
+ * @export
+ * @interface EndOfDayQuote
+ */
+export interface EndOfDayQuote {
+    /**
+     *
+     * @type {string}
+     * @memberof EndOfDayQuote
+     */
+    date: string;
+    /**
+     *
+     * @type {number}
+     * @memberof EndOfDayQuote
+     */
+    open: number;
+    /**
+     *
+     * @type {number}
+     * @memberof EndOfDayQuote
+     */
+    high: number;
+    /**
+     *
+     * @type {number}
+     * @memberof EndOfDayQuote
+     */
+    low: number;
+    /**
+     *
+     * @type {number}
+     * @memberof EndOfDayQuote
+     */
+    close: number;
+    /**
+     *
+     * @type {number}
+     * @memberof EndOfDayQuote
+     */
+    adjusted_close: number;
+    /**
+     *
+     * @type {number}
+     * @memberof EndOfDayQuote
+     */
+    volume: number;
+}
+/**
+ *
+ * @export
  * @interface Exchange
  */
 export interface Exchange {
@@ -369,6 +889,1064 @@ export interface Exchange {
      * @memberof Exchange
      */
     Currency: string;
+}
+/**
+ *
+ * @export
+ * @interface Financials
+ */
+export interface Financials {
+    /**
+     *
+     * @type {BalanceSheet}
+     * @memberof Financials
+     */
+    Balance_Sheet?: BalanceSheet;
+    /**
+     *
+     * @type {CashFlow}
+     * @memberof Financials
+     */
+    Cash_Flow?: CashFlow;
+    /**
+     *
+     * @type {IncomeStatement}
+     * @memberof Financials
+     */
+    Income_Statement?: IncomeStatement;
+}
+/**
+ *
+ * @export
+ * @interface Fund
+ */
+export interface Fund {
+    /**
+     *
+     * @type {string}
+     * @memberof Fund
+     */
+    name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Fund
+     */
+    date?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof Fund
+     */
+    totalShares?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Fund
+     */
+    totalAssets?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Fund
+     */
+    currentShares?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Fund
+     */
+    change?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Fund
+     */
+    change_p?: number;
+}
+/**
+ *
+ * @export
+ * @interface General
+ */
+export interface General {
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    Code?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    Type?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    Name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    Exchange?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    CurrencyCode?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    CurrencyName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    CurrencySymbol?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    CountryName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    CountryISO?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    ISIN?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    CUSIP?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    CIK?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    EmployerIdNumber?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    FiscalYearEnd?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    IPODate?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    InternationalDomestic?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    Sector?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    Industry?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    GicSector?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    GicGroup?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    GicIndustry?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    GicSubIndustry?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    HomeCategory?: string;
+    /**
+     *
+     * @type {boolean}
+     * @memberof General
+     */
+    IsDelisted?: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    Description?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    Address?: string;
+    /**
+     *
+     * @type {AddressData}
+     * @memberof General
+     */
+    AddressData?: AddressData;
+    /**
+     *
+     * @type {Array<Listing>}
+     * @memberof General
+     */
+    Listings?: Array<Listing>;
+    /**
+     *
+     * @type {{ [key: string]: Officer; }}
+     * @memberof General
+     */
+    Officers?: {
+        [key: string]: Officer;
+    };
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    Phone?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    WebURL?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    LogoURL?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof General
+     */
+    FullTimeEmployees?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof General
+     */
+    UpdatedAt?: string;
+}
+/**
+ *
+ * @export
+ * @interface Highlights
+ */
+export interface Highlights {
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    MarketCapitalization?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    MarketCapitalizationMln?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    EBITDA?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    PERatio?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    PEGRatio?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    WallStreetTargetPrice?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    BookValue?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    DividendShare?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    DividendYield?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    EarningsShare?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    EPSEstimateCurrentYear?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    EPSEstimateNextYear?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    EPSEstimateNextQuarter?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    EPSEstimateCurrentQuarter?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof Highlights
+     */
+    MostRecentQuarter?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    ProfitMargin?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    OperatingMarginTTM?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    ReturnOnAssetsTTM?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    ReturnOnEquityTTM?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    RevenueTTM?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    RevenuePerShareTTM?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    QuarterlyRevenueGrowthYOY?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    GrossProfitTTM?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    DilutedEpsTTM?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Highlights
+     */
+    QuarterlyEarningsGrowthYOY?: number;
+}
+/**
+ *
+ * @export
+ * @interface History
+ */
+export interface History {
+    /**
+     *
+     * @type {string}
+     * @memberof History
+     */
+    reportDate?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof History
+     */
+    date?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof History
+     */
+    beforeAfterMarket?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof History
+     */
+    currency?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof History
+     */
+    epsActual?: number | null;
+    /**
+     *
+     * @type {number}
+     * @memberof History
+     */
+    epsEstimate?: number | null;
+    /**
+     *
+     * @type {number}
+     * @memberof History
+     */
+    epsDifference?: number | null;
+    /**
+     *
+     * @type {number}
+     * @memberof History
+     */
+    surprisePercent?: number | null;
+}
+/**
+ *
+ * @export
+ * @interface Holders
+ */
+export interface Holders {
+    /**
+     *
+     * @type {{ [key: string]: Fund; }}
+     * @memberof Holders
+     */
+    Institutions?: {
+        [key: string]: Fund;
+    };
+    /**
+     *
+     * @type {{ [key: string]: Fund; }}
+     * @memberof Holders
+     */
+    Funds?: {
+        [key: string]: Fund;
+    };
+}
+/**
+ *
+ * @export
+ * @interface IncomeStatement
+ */
+export interface IncomeStatement {
+    /**
+     *
+     * @type {string}
+     * @memberof IncomeStatement
+     */
+    currency_symbol?: string;
+    /**
+     *
+     * @type {{ [key: string]: IncomeStatementItem; }}
+     * @memberof IncomeStatement
+     */
+    quarterly?: {
+        [key: string]: IncomeStatementItem;
+    };
+    /**
+     *
+     * @type {{ [key: string]: IncomeStatementItem; }}
+     * @memberof IncomeStatement
+     */
+    yearly?: {
+        [key: string]: IncomeStatementItem;
+    };
+}
+/**
+ *
+ * @export
+ * @interface IncomeStatementItem
+ */
+export interface IncomeStatementItem {
+    /**
+     *
+     * @type {string}
+     * @memberof IncomeStatementItem
+     */
+    date?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof IncomeStatementItem
+     */
+    filing_date?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof IncomeStatementItem
+     */
+    currency_symbol?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    researchDevelopment?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    effectOfAccountingCharges?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    incomeBeforeTax?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    minorityInterest?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    netIncome?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    sellingGeneralAdministrative?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    sellingAndMarketingExpenses?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    grossProfit?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    reconciledDepreciation?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    ebit?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    ebitda?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    depreciationAndAmortization?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    nonOperatingIncomeNetOther?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    operatingIncome?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    otherOperatingExpenses?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    interestExpense?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    taxProvision?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    interestIncome?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    netInterestIncome?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    extraordinaryItems?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    nonRecurring?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    otherItems?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    incomeTaxExpense?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    totalRevenue?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    totalOperatingExpenses?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    costOfRevenue?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    totalOtherIncomeExpenseNet?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    discontinuedOperations?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    netIncomeFromContinuingOps?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    netIncomeApplicableToCommonShares?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof IncomeStatementItem
+     */
+    preferredStockAndOtherAdjustments?: number;
+}
+/**
+ *
+ * @export
+ * @interface InsiderTransaction
+ */
+export interface InsiderTransaction {
+    /**
+     *
+     * @type {string}
+     * @memberof InsiderTransaction
+     */
+    date?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof InsiderTransaction
+     */
+    ownerCik?: string | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InsiderTransaction
+     */
+    ownerName?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof InsiderTransaction
+     */
+    transactionDate?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof InsiderTransaction
+     */
+    transactionCode?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof InsiderTransaction
+     */
+    transactionAmount?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof InsiderTransaction
+     */
+    transactionPrice?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof InsiderTransaction
+     */
+    transactionAcquiredDisposed?: string;
+    /**
+     *
+     * @type {number}
+     * @memberof InsiderTransaction
+     */
+    postTransactionAmount?: number | null;
+    /**
+     *
+     * @type {string}
+     * @memberof InsiderTransaction
+     */
+    secLink?: string;
+}
+/**
+ *
+ * @export
+ * @interface Listing
+ */
+export interface Listing {
+    /**
+     *
+     * @type {string}
+     * @memberof Listing
+     */
+    Code?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Listing
+     */
+    Exchange?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Listing
+     */
+    Name?: string;
+}
+/**
+ *
+ * @export
+ * @interface NumberDividendsByYear
+ */
+export interface NumberDividendsByYear {
+    /**
+     *
+     * @type {number}
+     * @memberof NumberDividendsByYear
+     */
+    Year?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof NumberDividendsByYear
+     */
+    Count?: number;
+}
+/**
+ *
+ * @export
+ * @interface Officer
+ */
+export interface Officer {
+    /**
+     *
+     * @type {string}
+     * @memberof Officer
+     */
+    Name?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Officer
+     */
+    Title?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Officer
+     */
+    YearBorn?: string;
+}
+/**
+ *
+ * @export
+ * @enum {string}
+ */
+export declare enum Order {
+    A = "a",
+    D = "d"
+}
+/**
+ *
+ * @export
+ * @interface OutstandingShares
+ */
+export interface OutstandingShares {
+    /**
+     *
+     * @type {{ [key: string]: AnnualValue; }}
+     * @memberof OutstandingShares
+     */
+    annual?: {
+        [key: string]: AnnualValue;
+    };
+    /**
+     *
+     * @type {{ [key: string]: AnnualValue; }}
+     * @memberof OutstandingShares
+     */
+    quarterly?: {
+        [key: string]: AnnualValue;
+    };
+}
+/**
+ *
+ * @export
+ * @enum {string}
+ */
+export declare enum Period {
+    D = "d",
+    W = "w",
+    M = "m"
+}
+/**
+ *
+ * @export
+ * @interface SharesStats
+ */
+export interface SharesStats {
+    /**
+     *
+     * @type {number}
+     * @memberof SharesStats
+     */
+    SharesOutstanding?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof SharesStats
+     */
+    SharesFloat?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof SharesStats
+     */
+    PercentInsiders?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof SharesStats
+     */
+    PercentInstitutions?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof SharesStats
+     */
+    SharesShort?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof SharesStats
+     */
+    SharesShortPriorMonth?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof SharesStats
+     */
+    ShortRatio?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof SharesStats
+     */
+    ShortPercentOutstanding?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof SharesStats
+     */
+    ShortPercentFloat?: number;
+}
+/**
+ *
+ * @export
+ * @interface SplitsDividends
+ */
+export interface SplitsDividends {
+    /**
+     *
+     * @type {number}
+     * @memberof SplitsDividends
+     */
+    ForwardAnnualDividendRate?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof SplitsDividends
+     */
+    ForwardAnnualDividendYield?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof SplitsDividends
+     */
+    PayoutRatio?: number;
+    /**
+     *
+     * @type {string}
+     * @memberof SplitsDividends
+     */
+    DividendDate?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SplitsDividends
+     */
+    ExDividendDate?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SplitsDividends
+     */
+    LastSplitFactor?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof SplitsDividends
+     */
+    LastSplitDate?: string;
+    /**
+     *
+     * @type {{ [key: string]: NumberDividendsByYear; }}
+     * @memberof SplitsDividends
+     */
+    NumberDividendsByYear?: {
+        [key: string]: NumberDividendsByYear;
+    };
 }
 /**
  *
@@ -481,13 +2059,285 @@ export interface SymbolSearch {
     previousCloseDate?: string;
 }
 /**
+ *
+ * @export
+ * @interface Technicals
+ */
+export interface Technicals {
+    [key: string]: object | any;
+    /**
+     *
+     * @type {number}
+     * @memberof Technicals
+     */
+    Beta?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Technicals
+     */
+    _52WeekHigh?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Technicals
+     */
+    _52WeekLow?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Technicals
+     */
+    _50DayMA?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Technicals
+     */
+    _200DayMA?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Technicals
+     */
+    SharesShort?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Technicals
+     */
+    SharesShortPriorMonth?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Technicals
+     */
+    ShortRatio?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Technicals
+     */
+    ShortPercent?: number;
+}
+/**
+ *
+ * @export
+ * @interface Trend
+ */
+export interface Trend {
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    period?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    growth?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    earningsEstimateAvg?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    earningsEstimateLow?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    earningsEstimateHigh?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    earningsEstimateYearAgoEps?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    earningsEstimateNumberOfAnalysts?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    earningsEstimateGrowth?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    revenueEstimateAvg?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    revenueEstimateLow?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    revenueEstimateHigh?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    revenueEstimateYearAgoEps?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    revenueEstimateNumberOfAnalysts?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    revenueEstimateGrowth?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    epsTrendCurrent?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    epsTrend7daysAgo?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    epsTrend30daysAgo?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    epsTrend60daysAgo?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    epsTrend90daysAgo?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    epsRevisionsUpLast7days?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    epsRevisionsUpLast30days?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    epsRevisionsDownLast30days?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Trend
+     */
+    epsRevisionsDownLast90days?: number;
+}
+/**
+ *
+ * @export
+ * @interface Valuation
+ */
+export interface Valuation {
+    /**
+     *
+     * @type {number}
+     * @memberof Valuation
+     */
+    TrailingPE?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Valuation
+     */
+    ForwardPE?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Valuation
+     */
+    PriceSalesTTM?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Valuation
+     */
+    PriceBookMRQ?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Valuation
+     */
+    EnterpriseValue?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Valuation
+     */
+    EnterpriseValueRevenue?: number;
+    /**
+     *
+     * @type {number}
+     * @memberof Valuation
+     */
+    EnterpriseValueEbitda?: number;
+}
+/**
  * AssetsApi - axios parameter creator
  * @export
  */
 export declare const AssetsApiAxiosParamCreator: (configuration?: Configuration) => {
     /**
      *
-     * @summary Get Asset fundamentals
+     * @summary Get All Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    assetFundamentals: (ticker: string, options?: any) => Promise<RequestArgs>;
+    /**
+     *
+     * @summary Get Compat Asset fundamentals (General,Highlights,Valuation,SharesStats,Technicals,AnalystRatings,ESGScores)
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    assetFundamentalsCompact: (ticker: string, options?: any) => Promise<RequestArgs>;
+    /**
+     *
+     * @summary Get General Asset fundamentals
      * @param {string} ticker Asset Ticker
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -495,7 +2345,27 @@ export declare const AssetsApiAxiosParamCreator: (configuration?: Configuration)
     assetFundamentalsGeneralSection: (ticker: string, options?: any) => Promise<RequestArgs>;
     /**
      *
-     * @summary Get Asset fundamentals
+     * @summary Get Technicals Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    assetFundamentalsTechnicalsSection: (ticker: string, options?: any) => Promise<RequestArgs>;
+    /**
+     *
+     * @summary Get End of Day Historical Quotes
+     * @param {string} ticker Asset Ticker
+     * @param {Period} [period] Daily, weekly or monthly time period
+     * @param {string} [from] Start date
+     * @param {string} [to] End date
+     * @param {Order} [order] Ascending (a) or descending (d) order
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    endOfDayHistorical: (ticker: string, period?: Period, from?: string, to?: string, order?: Order, options?: any) => Promise<RequestArgs>;
+    /**
+     *
+     * @summary Get Asset Quote
      * @param {string} ticker Asset Ticker
      * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
      * @param {*} [options] Override http request option.
@@ -518,21 +2388,57 @@ export declare const AssetsApiAxiosParamCreator: (configuration?: Configuration)
 export declare const AssetsApiFp: (configuration?: Configuration) => {
     /**
      *
-     * @summary Get Asset fundamentals
+     * @summary Get All Asset fundamentals
      * @param {string} ticker Asset Ticker
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    assetFundamentalsGeneralSection(ticker: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AssetFundamentalsSectionGeneral>>;
+    assetFundamentals(ticker: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AssetFundamentals>>;
     /**
      *
-     * @summary Get Asset fundamentals
+     * @summary Get Compat Asset fundamentals (General,Highlights,Valuation,SharesStats,Technicals,AnalystRatings,ESGScores)
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    assetFundamentalsCompact(ticker: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AssetFundamentalsCompact>>;
+    /**
+     *
+     * @summary Get General Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    assetFundamentalsGeneralSection(ticker: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<General>>;
+    /**
+     *
+     * @summary Get Technicals Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    assetFundamentalsTechnicalsSection(ticker: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Technicals>>;
+    /**
+     *
+     * @summary Get End of Day Historical Quotes
+     * @param {string} ticker Asset Ticker
+     * @param {Period} [period] Daily, weekly or monthly time period
+     * @param {string} [from] Start date
+     * @param {string} [to] End date
+     * @param {Order} [order] Ascending (a) or descending (d) order
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    endOfDayHistorical(ticker: string, period?: Period, from?: string, to?: string, order?: Order, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<EndOfDayQuote>>>;
+    /**
+     *
+     * @summary Get Asset Quote
      * @param {string} ticker Asset Ticker
      * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    realTimeQuote(ticker: string, s?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<AssetQuote>>>;
+    realTimeQuote(ticker: string, s?: string, options?: any): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<AssetQuote>>;
     /**
      *
      * @summary Search symbols
@@ -549,21 +2455,57 @@ export declare const AssetsApiFp: (configuration?: Configuration) => {
 export declare const AssetsApiFactory: (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) => {
     /**
      *
-     * @summary Get Asset fundamentals
+     * @summary Get All Asset fundamentals
      * @param {string} ticker Asset Ticker
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    assetFundamentalsGeneralSection(ticker: string, options?: any): AxiosPromise<AssetFundamentalsSectionGeneral>;
+    assetFundamentals(ticker: string, options?: any): AxiosPromise<AssetFundamentals>;
     /**
      *
-     * @summary Get Asset fundamentals
+     * @summary Get Compat Asset fundamentals (General,Highlights,Valuation,SharesStats,Technicals,AnalystRatings,ESGScores)
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    assetFundamentalsCompact(ticker: string, options?: any): AxiosPromise<AssetFundamentalsCompact>;
+    /**
+     *
+     * @summary Get General Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    assetFundamentalsGeneralSection(ticker: string, options?: any): AxiosPromise<General>;
+    /**
+     *
+     * @summary Get Technicals Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    assetFundamentalsTechnicalsSection(ticker: string, options?: any): AxiosPromise<Technicals>;
+    /**
+     *
+     * @summary Get End of Day Historical Quotes
+     * @param {string} ticker Asset Ticker
+     * @param {Period} [period] Daily, weekly or monthly time period
+     * @param {string} [from] Start date
+     * @param {string} [to] End date
+     * @param {Order} [order] Ascending (a) or descending (d) order
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    endOfDayHistorical(ticker: string, period?: Period, from?: string, to?: string, order?: Order, options?: any): AxiosPromise<Array<EndOfDayQuote>>;
+    /**
+     *
+     * @summary Get Asset Quote
      * @param {string} ticker Asset Ticker
      * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    realTimeQuote(ticker: string, s?: string, options?: any): AxiosPromise<Array<AssetQuote>>;
+    realTimeQuote(ticker: string, s?: string, options?: any): AxiosPromise<AssetQuote>;
     /**
      *
      * @summary Search symbols
@@ -582,23 +2524,63 @@ export declare const AssetsApiFactory: (configuration?: Configuration, basePath?
 export declare class AssetsApi extends BaseAPI {
     /**
      *
-     * @summary Get Asset fundamentals
+     * @summary Get All Asset fundamentals
      * @param {string} ticker Asset Ticker
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AssetsApi
      */
-    assetFundamentalsGeneralSection(ticker: string, options?: any): Promise<import("axios").AxiosResponse<AssetFundamentalsSectionGeneral>>;
+    assetFundamentals(ticker: string, options?: any): Promise<import("axios").AxiosResponse<AssetFundamentals>>;
     /**
      *
-     * @summary Get Asset fundamentals
+     * @summary Get Compat Asset fundamentals (General,Highlights,Valuation,SharesStats,Technicals,AnalystRatings,ESGScores)
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    assetFundamentalsCompact(ticker: string, options?: any): Promise<import("axios").AxiosResponse<AssetFundamentalsCompact>>;
+    /**
+     *
+     * @summary Get General Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    assetFundamentalsGeneralSection(ticker: string, options?: any): Promise<import("axios").AxiosResponse<General>>;
+    /**
+     *
+     * @summary Get Technicals Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    assetFundamentalsTechnicalsSection(ticker: string, options?: any): Promise<import("axios").AxiosResponse<Technicals>>;
+    /**
+     *
+     * @summary Get End of Day Historical Quotes
+     * @param {string} ticker Asset Ticker
+     * @param {Period} [period] Daily, weekly or monthly time period
+     * @param {string} [from] Start date
+     * @param {string} [to] End date
+     * @param {Order} [order] Ascending (a) or descending (d) order
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    endOfDayHistorical(ticker: string, period?: Period, from?: string, to?: string, order?: Order, options?: any): Promise<import("axios").AxiosResponse<EndOfDayQuote[]>>;
+    /**
+     *
+     * @summary Get Asset Quote
      * @param {string} ticker Asset Ticker
      * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof AssetsApi
      */
-    realTimeQuote(ticker: string, s?: string, options?: any): Promise<import("axios").AxiosResponse<AssetQuote[]>>;
+    realTimeQuote(ticker: string, s?: string, options?: any): Promise<import("axios").AxiosResponse<AssetQuote>>;
     /**
      *
      * @summary Search symbols

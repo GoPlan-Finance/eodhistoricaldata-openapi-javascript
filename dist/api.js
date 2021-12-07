@@ -25,13 +25,34 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExchangesApi = exports.ExchangesApiFactory = exports.ExchangesApiFp = exports.ExchangesApiAxiosParamCreator = exports.AssetsApi = exports.AssetsApiFactory = exports.AssetsApiFp = exports.AssetsApiAxiosParamCreator = void 0;
+exports.ExchangesApi = exports.ExchangesApiFactory = exports.ExchangesApiFp = exports.ExchangesApiAxiosParamCreator = exports.AssetsApi = exports.AssetsApiFactory = exports.AssetsApiFp = exports.AssetsApiAxiosParamCreator = exports.Period = exports.Order = void 0;
 const axios_1 = __importDefault(require("axios"));
 // Some imports not used depending on template conditions
 // @ts-ignore
 const common_1 = require("./common");
 // @ts-ignore
 const base_1 = require("./base");
+/**
+ *
+ * @export
+ * @enum {string}
+ */
+var Order;
+(function (Order) {
+    Order["A"] = "a";
+    Order["D"] = "d";
+})(Order = exports.Order || (exports.Order = {}));
+/**
+ *
+ * @export
+ * @enum {string}
+ */
+var Period;
+(function (Period) {
+    Period["D"] = "d";
+    Period["W"] = "w";
+    Period["M"] = "m";
+})(Period = exports.Period || (exports.Period = {}));
 /**
  * AssetsApi - axios parameter creator
  * @export
@@ -40,7 +61,69 @@ const AssetsApiAxiosParamCreator = function (configuration) {
     return {
         /**
          *
-         * @summary Get Asset fundamentals
+         * @summary Get All Asset fundamentals
+         * @param {string} ticker Asset Ticker
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assetFundamentals: (ticker, options = {}) => __awaiter(this, void 0, void 0, function* () {
+            // verify required parameter 'ticker' is not null or undefined
+            common_1.assertParamExists('assetFundamentals', 'ticker', ticker);
+            const localVarPath = `/fundamentals/{ticker}?fmt=json`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = Object.assign(Object.assign({ method: 'GET' }, baseOptions), options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            // authentication api_token required
+            yield common_1.setApiKeyToObject(localVarQueryParameter, "api_token", configuration);
+            common_1.setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = Object.assign(Object.assign(Object.assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+            return {
+                url: common_1.toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        }),
+        /**
+         *
+         * @summary Get Compat Asset fundamentals (General,Highlights,Valuation,SharesStats,Technicals,AnalystRatings,ESGScores)
+         * @param {string} ticker Asset Ticker
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assetFundamentalsCompact: (ticker, options = {}) => __awaiter(this, void 0, void 0, function* () {
+            // verify required parameter 'ticker' is not null or undefined
+            common_1.assertParamExists('assetFundamentalsCompact', 'ticker', ticker);
+            const localVarPath = `/fundamentals/{ticker}?fmt=json&filter=General,Highlights,Valuation,SharesStats,Technicals,AnalystRatings,ESGScores`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = Object.assign(Object.assign({ method: 'GET' }, baseOptions), options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            // authentication api_token required
+            yield common_1.setApiKeyToObject(localVarQueryParameter, "api_token", configuration);
+            common_1.setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = Object.assign(Object.assign(Object.assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+            return {
+                url: common_1.toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        }),
+        /**
+         *
+         * @summary Get General Asset fundamentals
          * @param {string} ticker Asset Ticker
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -71,7 +154,89 @@ const AssetsApiAxiosParamCreator = function (configuration) {
         }),
         /**
          *
-         * @summary Get Asset fundamentals
+         * @summary Get Technicals Asset fundamentals
+         * @param {string} ticker Asset Ticker
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assetFundamentalsTechnicalsSection: (ticker, options = {}) => __awaiter(this, void 0, void 0, function* () {
+            // verify required parameter 'ticker' is not null or undefined
+            common_1.assertParamExists('assetFundamentalsTechnicalsSection', 'ticker', ticker);
+            const localVarPath = `/fundamentals/{ticker}?fmt=json&filter=Technicals`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = Object.assign(Object.assign({ method: 'GET' }, baseOptions), options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            // authentication api_token required
+            yield common_1.setApiKeyToObject(localVarQueryParameter, "api_token", configuration);
+            common_1.setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = Object.assign(Object.assign(Object.assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+            return {
+                url: common_1.toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        }),
+        /**
+         *
+         * @summary Get End of Day Historical Quotes
+         * @param {string} ticker Asset Ticker
+         * @param {Period} [period] Daily, weekly or monthly time period
+         * @param {string} [from] Start date
+         * @param {string} [to] End date
+         * @param {Order} [order] Ascending (a) or descending (d) order
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        endOfDayHistorical: (ticker, period, from, to, order, options = {}) => __awaiter(this, void 0, void 0, function* () {
+            // verify required parameter 'ticker' is not null or undefined
+            common_1.assertParamExists('endOfDayHistorical', 'ticker', ticker);
+            const localVarPath = `/eod/{ticker}?fmt=json`
+                .replace(`{${"ticker"}}`, encodeURIComponent(String(ticker)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, common_1.DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = Object.assign(Object.assign({ method: 'GET' }, baseOptions), options);
+            const localVarHeaderParameter = {};
+            const localVarQueryParameter = {};
+            // authentication api_token required
+            yield common_1.setApiKeyToObject(localVarQueryParameter, "api_token", configuration);
+            if (period !== undefined) {
+                localVarQueryParameter['period'] = period;
+            }
+            if (from !== undefined) {
+                localVarQueryParameter['from'] = (from instanceof Date) ?
+                    from.toISOString().substr(0, 10) :
+                    from;
+            }
+            if (to !== undefined) {
+                localVarQueryParameter['to'] = (to instanceof Date) ?
+                    to.toISOString().substr(0, 10) :
+                    to;
+            }
+            if (order !== undefined) {
+                localVarQueryParameter['order'] = order;
+            }
+            common_1.setSearchParams(localVarUrlObj, localVarQueryParameter, options.query);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = Object.assign(Object.assign(Object.assign({}, localVarHeaderParameter), headersFromBaseOptions), options.headers);
+            return {
+                url: common_1.toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        }),
+        /**
+         *
+         * @summary Get Asset Quote
          * @param {string} ticker Asset Ticker
          * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
          * @param {*} [options] Override http request option.
@@ -147,7 +312,33 @@ const AssetsApiFp = function (configuration) {
     return {
         /**
          *
-         * @summary Get Asset fundamentals
+         * @summary Get All Asset fundamentals
+         * @param {string} ticker Asset Ticker
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assetFundamentals(ticker, options) {
+            return __awaiter(this, void 0, void 0, function* () {
+                const localVarAxiosArgs = yield localVarAxiosParamCreator.assetFundamentals(ticker, options);
+                return common_1.createRequestFunction(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration);
+            });
+        },
+        /**
+         *
+         * @summary Get Compat Asset fundamentals (General,Highlights,Valuation,SharesStats,Technicals,AnalystRatings,ESGScores)
+         * @param {string} ticker Asset Ticker
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assetFundamentalsCompact(ticker, options) {
+            return __awaiter(this, void 0, void 0, function* () {
+                const localVarAxiosArgs = yield localVarAxiosParamCreator.assetFundamentalsCompact(ticker, options);
+                return common_1.createRequestFunction(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration);
+            });
+        },
+        /**
+         *
+         * @summary Get General Asset fundamentals
          * @param {string} ticker Asset Ticker
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -160,7 +351,37 @@ const AssetsApiFp = function (configuration) {
         },
         /**
          *
-         * @summary Get Asset fundamentals
+         * @summary Get Technicals Asset fundamentals
+         * @param {string} ticker Asset Ticker
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assetFundamentalsTechnicalsSection(ticker, options) {
+            return __awaiter(this, void 0, void 0, function* () {
+                const localVarAxiosArgs = yield localVarAxiosParamCreator.assetFundamentalsTechnicalsSection(ticker, options);
+                return common_1.createRequestFunction(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration);
+            });
+        },
+        /**
+         *
+         * @summary Get End of Day Historical Quotes
+         * @param {string} ticker Asset Ticker
+         * @param {Period} [period] Daily, weekly or monthly time period
+         * @param {string} [from] Start date
+         * @param {string} [to] End date
+         * @param {Order} [order] Ascending (a) or descending (d) order
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        endOfDayHistorical(ticker, period, from, to, order, options) {
+            return __awaiter(this, void 0, void 0, function* () {
+                const localVarAxiosArgs = yield localVarAxiosParamCreator.endOfDayHistorical(ticker, period, from, to, order, options);
+                return common_1.createRequestFunction(localVarAxiosArgs, axios_1.default, base_1.BASE_PATH, configuration);
+            });
+        },
+        /**
+         *
+         * @summary Get Asset Quote
          * @param {string} ticker Asset Ticker
          * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
          * @param {*} [options] Override http request option.
@@ -197,7 +418,27 @@ const AssetsApiFactory = function (configuration, basePath, axios) {
     return {
         /**
          *
-         * @summary Get Asset fundamentals
+         * @summary Get All Asset fundamentals
+         * @param {string} ticker Asset Ticker
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assetFundamentals(ticker, options) {
+            return localVarFp.assetFundamentals(ticker, options).then((request) => request(axios, basePath));
+        },
+        /**
+         *
+         * @summary Get Compat Asset fundamentals (General,Highlights,Valuation,SharesStats,Technicals,AnalystRatings,ESGScores)
+         * @param {string} ticker Asset Ticker
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assetFundamentalsCompact(ticker, options) {
+            return localVarFp.assetFundamentalsCompact(ticker, options).then((request) => request(axios, basePath));
+        },
+        /**
+         *
+         * @summary Get General Asset fundamentals
          * @param {string} ticker Asset Ticker
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
@@ -207,7 +448,31 @@ const AssetsApiFactory = function (configuration, basePath, axios) {
         },
         /**
          *
-         * @summary Get Asset fundamentals
+         * @summary Get Technicals Asset fundamentals
+         * @param {string} ticker Asset Ticker
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        assetFundamentalsTechnicalsSection(ticker, options) {
+            return localVarFp.assetFundamentalsTechnicalsSection(ticker, options).then((request) => request(axios, basePath));
+        },
+        /**
+         *
+         * @summary Get End of Day Historical Quotes
+         * @param {string} ticker Asset Ticker
+         * @param {Period} [period] Daily, weekly or monthly time period
+         * @param {string} [from] Start date
+         * @param {string} [to] End date
+         * @param {Order} [order] Ascending (a) or descending (d) order
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        endOfDayHistorical(ticker, period, from, to, order, options) {
+            return localVarFp.endOfDayHistorical(ticker, period, from, to, order, options).then((request) => request(axios, basePath));
+        },
+        /**
+         *
+         * @summary Get Asset Quote
          * @param {string} ticker Asset Ticker
          * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
          * @param {*} [options] Override http request option.
@@ -238,7 +503,29 @@ exports.AssetsApiFactory = AssetsApiFactory;
 class AssetsApi extends base_1.BaseAPI {
     /**
      *
-     * @summary Get Asset fundamentals
+     * @summary Get All Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    assetFundamentals(ticker, options) {
+        return exports.AssetsApiFp(this.configuration).assetFundamentals(ticker, options).then((request) => request(this.axios, this.basePath));
+    }
+    /**
+     *
+     * @summary Get Compat Asset fundamentals (General,Highlights,Valuation,SharesStats,Technicals,AnalystRatings,ESGScores)
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    assetFundamentalsCompact(ticker, options) {
+        return exports.AssetsApiFp(this.configuration).assetFundamentalsCompact(ticker, options).then((request) => request(this.axios, this.basePath));
+    }
+    /**
+     *
+     * @summary Get General Asset fundamentals
      * @param {string} ticker Asset Ticker
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
@@ -249,7 +536,33 @@ class AssetsApi extends base_1.BaseAPI {
     }
     /**
      *
-     * @summary Get Asset fundamentals
+     * @summary Get Technicals Asset fundamentals
+     * @param {string} ticker Asset Ticker
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    assetFundamentalsTechnicalsSection(ticker, options) {
+        return exports.AssetsApiFp(this.configuration).assetFundamentalsTechnicalsSection(ticker, options).then((request) => request(this.axios, this.basePath));
+    }
+    /**
+     *
+     * @summary Get End of Day Historical Quotes
+     * @param {string} ticker Asset Ticker
+     * @param {Period} [period] Daily, weekly or monthly time period
+     * @param {string} [from] Start date
+     * @param {string} [to] End date
+     * @param {Order} [order] Ascending (a) or descending (d) order
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof AssetsApi
+     */
+    endOfDayHistorical(ticker, period, from, to, order, options) {
+        return exports.AssetsApiFp(this.configuration).endOfDayHistorical(ticker, period, from, to, order, options).then((request) => request(this.axios, this.basePath));
+    }
+    /**
+     *
+     * @summary Get Asset Quote
      * @param {string} ticker Asset Ticker
      * @param {string} [s] Extra tickers to fetch separated by a \&quot;,\&quot; (Max recommended by EOD is 15-20 tickers)
      * @param {*} [options] Override http request option.
