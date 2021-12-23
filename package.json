@@ -1,6 +1,6 @@
 {
   "name": "eodhistoricaldata-openapi",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "EOD Historical Data API Client",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
